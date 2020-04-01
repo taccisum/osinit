@@ -46,6 +46,8 @@ function main(){
     if [ ! -e ${OH_MY_ZSH_PLUGIN_DIR}/zsh-autosuggestions ];then
         git clone https://github.com/zsh-users/zsh-autosuggestions ${OH_MY_ZSH_PLUGIN_DIR}/zsh-autosuggestions
         setup_zsh_plugin zsh-autosuggestions
+    else
+        echo 'autosugesstions has installed'
     fi
 }
 
