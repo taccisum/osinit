@@ -26,7 +26,6 @@ function main(){
     tools=(
         'vim'
         'tree'
-        'ccat'
         'jq'
     )
 
