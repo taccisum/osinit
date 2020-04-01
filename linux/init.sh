@@ -1,9 +1,24 @@
 #!/bin/sh
 
-# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+cd $(dirname $0)
 
-# install zsh
-yum install zsh -y
+USE_LOCAL=${USE_LOCAL:-}
 
-# install oh-my-zsh
-sh zsh_install.sh
+function install_zsh(){
+    yum install zsh -y
+}
+
+function install_oh_my_zsh(){
+    if [ -z $USE_LOCAL ]; then
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    else
+        sh local/zsh_install.sh
+    fi
+}
+
+function main(){
+    install_zsh
+    install_oh_my_zsh
+}
+
+main $@
