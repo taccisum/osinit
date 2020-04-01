@@ -1,7 +1,6 @@
 #!/bin/sh
 
 cd $(dirname $0)
-
 USE_LOCAL=${USE_LOCAL:-}
 
 function install_zsh(){
@@ -16,9 +15,25 @@ function install_oh_my_zsh(){
     fi
 }
 
+function install(){
+    yum install $0
+}
+
 function main(){
     install_zsh
     install_oh_my_zsh
+
+    tools=(
+        'vim'
+        'tree'
+        'ccat'
+        'jq'
+    )
+
+    for tool in ${tools[@]};
+    do
+        install $tool
+    done
 }
 
 main $@
