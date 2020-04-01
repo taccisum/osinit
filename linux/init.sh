@@ -16,7 +16,7 @@ function install_oh_my_zsh(){
 }
 
 function install(){
-    yum install $0
+    yum install $1 -y
 }
 
 function main(){
