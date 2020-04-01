@@ -15,6 +15,10 @@ function install_oh_my_zsh(){
     else
         sh local/zsh_install.sh
     fi
+    if [ ! $? = 0 ];then
+        echo 'fail to install oh my zsh.'
+        exit 1
+    fi
 }
 
 function setup_zsh_plugin(){
