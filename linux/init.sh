@@ -2,6 +2,7 @@
 
 cd $(dirname $0)
 USE_LOCAL=${USE_LOCAL:-}
+OH_MY_ZSH_PLUGIN_DIR=${ZSH_CUSTOM:-~/.oh-my-zsh/custom/plugins}
 
 function install_zsh(){
     yum install zsh -y
@@ -14,6 +15,10 @@ function install_oh_my_zsh(){
     else
         sh local/zsh_install.sh
     fi
+}
+
+function setup_zsh_plugin(){
+    plugins=(${plugins[@]} $1) >> ~/.zshrc
 }
 
 function install(){
@@ -38,7 +43,10 @@ function main(){
     # zsh plugins
     install autojump-zsh
 
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    if [ ! -e ${OH_MY_ZSH_PLUGIN_DIR}/zsh-autosuggestions ];then
+        git clone https://github.com/zsh-users/zsh-autosuggestions ${OH_MY_ZSH_PLUGIN_DIR}/zsh-autosuggestions
+        setup_zsh_plugin zsh-autosuggestions
+    fi
 }
 
 main $@
