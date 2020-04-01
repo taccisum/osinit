@@ -18,7 +18,7 @@ function install_oh_my_zsh(){
 }
 
 function setup_zsh_plugin(){
-    plugins=(${plugins[@]} $1) >> ~/.zshrc
+    sed -i "/source \$ZSH\/oh-my-zsh.sh/i plugins=(\${plugins[@]} $1)" ~/.zshrc
 }
 
 function install(){
