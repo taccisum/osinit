@@ -17,3 +17,6 @@
 
   - name: do init
     shell: "USE_LOCAL=true sh /tmp/init/linux/init.sh"
+
+  - name: setup theme
+    shell: "sh /tmp/init/linux/setuptheme.sh muse"
