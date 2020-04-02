@@ -30,6 +30,8 @@ function install(){
 }
 
 function main(){
+    install git
+
     install_zsh
 
     # common tools

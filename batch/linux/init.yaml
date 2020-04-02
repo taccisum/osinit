@@ -1,0 +1,19 @@
+- hosts:
+    - init_hosts
+  become: >-
+    {%- if (ansible_user is defined and ansible_user == 'root') or
+    (ansible_ssh_user is defined and ansible_ssh_user == 'root') -%}
+    no
+    {%- else -%}
+    yes
+    {%- endif -%}
+  gather_facts: no
+  tasks:
+  - name: copy scripts
+    copy: src=init.tar.gz dest=/tmp/init/
+
+  - name: unarchive
+    shell: cd /tmp/init && tar -zxf init.tar.gz
+
+  - name: do init
+    shell: "USE_LOCAL=true sh /tmp/init/linux/init.sh"

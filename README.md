@@ -12,3 +12,13 @@ Scripts for initialize os.
 
     $ sh linux/setuptheme.sh {theme_name}
     $ source ~/.zshrc
+
+
+### batch init
+
+    $ vim host.ini
+
+add you hosts info
+
+    $ tar -zcf batch/linux/init.tar.gz linux
+    $ ansible-playbook -i batch/linux/hosts.ini batch/linux/init.yaml
