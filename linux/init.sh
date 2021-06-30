@@ -34,11 +34,15 @@ function main(){
 
     install_zsh
 
+    echo 'add node rpm source'
+    curl -sL https://rpm.nodesource.com/setup_14.x | bash -
+
     # common tools
     tools=(
         'vim'
         'tree'
         'jq'
+        'nodejs'
     )
 
     for tool in ${tools[@]};
