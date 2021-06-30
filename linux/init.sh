@@ -5,8 +5,12 @@ USE_LOCAL=${USE_LOCAL:-}
 OH_MY_ZSH_PLUGIN_DIR=${ZSH_CUSTOM:-~/.oh-my-zsh/custom/plugins}
 
 function install_zsh(){
-    yum install zsh -y
-    install_oh_my_zsh
+    if command zsh 2>/dev/null; then
+        echo '检测到 zsh 已安装，将跳过此步骤'
+    else
+        yum install zsh -y
+        install_oh_my_zsh
+    fi
 }
 
 function install_oh_my_zsh(){
