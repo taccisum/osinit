@@ -28,5 +28,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: yum update -y
-      - run: yum install curl -y
+      - run: yum install which curl -y
       - run: ./debian.sh
