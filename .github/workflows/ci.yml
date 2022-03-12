@@ -5,10 +5,10 @@ on:
       - develop
       - main
 jobs:
-  test:
+  debian-test:
     strategy:
       matrix:
-        os: [ubuntu, 'centos:7']
+        os: [ubuntu]
     runs-on: ubuntu-latest
     container:
       image: ${{ matrix.os }}
@@ -17,4 +17,15 @@ jobs:
       - run: apt update
       - run: DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
       - run: apt install apt-utils curl -y
+      - run: ./debian.sh
+  centos-test:
+    strategy:
+      matrix:
+        os: [centos, 'centos:7']
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - run: yum install curl -y
       - run: ./debian.sh
