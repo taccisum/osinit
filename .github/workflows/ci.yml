@@ -21,7 +21,7 @@ jobs:
   centos-test:
     strategy:
       matrix:
-        os: [centos, 'centos:7']
+        os: ['centos:7']
     runs-on: ubuntu-latest
     container:
       image: ${{ matrix.os }}
