@@ -8,7 +8,7 @@ jobs:
   debian-test:
     strategy:
       matrix:
-        os: [ubuntu, raspbian/stretch]
+        os: [ubuntu, 'ubuntu:18.04']
     runs-on: ubuntu-latest
     container:
       image: ${{ matrix.os }}
