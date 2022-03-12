@@ -11,4 +11,6 @@ jobs:
       image: ubuntu
     steps:
       - uses: actions/checkout@v2
+      - run: add-apt-repository 'deb http://archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse'
+      - run: apt-get update
       - run: ./debian.sh
