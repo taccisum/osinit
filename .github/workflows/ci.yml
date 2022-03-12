@@ -4,24 +4,21 @@ on:
     branches:
       - develop
       - main
-jobs:
-  arm-test:
-    strategy:
-      matrix:
-        os: [lukechilds/dockerpi]
-    runs-on: ubuntu-latest
-    container:
-      image: ${{ matrix.os }}
-      options: --entrypoint bash --platform linux/arm/v6
-    steps:
-      - name: Setup QEMU
-        uses: docker/setup-qemu-action@v1
-
-      - uses: actions/checkout@v2
-      - run: apt update
-      - run: DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
-      - run: apt install apt-utils curl -y
-      - run: ./debian.sh
+# jobs:
+#   arm-test:
+#     strategy:
+#       matrix:
+#         os: [lukechilds/dockerpi]
+#     runs-on: ubuntu-latest
+#     container:
+#       image: ${{ matrix.os }}
+#       options: --platform linux/arm/v6
+#     steps:
+#       - uses: actions/checkout@v2
+#       - run: apt update
+#       - run: DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
+#       - run: apt install apt-utils curl -y
+#       - run: ./debian.sh
 
   debian-test:
     strategy:
