@@ -11,6 +11,7 @@ jobs:
       image: ubuntu
     steps:
       - uses: actions/checkout@v2
+      - run: apt install software-properties-common
       - run: add-apt-repository 'deb http://archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse'
-      - run: apt-get update
+      - run: apt update
       - run: ./debian.sh
