@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ${{ matrix.os }}
-      options: --platform linux/arm/v6
+      options: --entrypoint bash --platform linux/arm/v6
     steps:
       - uses: actions/checkout@v2
       - run: apt update
