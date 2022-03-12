@@ -27,6 +27,6 @@ jobs:
       image: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
-      - run: yum update
+      - run: yum update -y
       - run: yum install curl -y
       - run: ./debian.sh
