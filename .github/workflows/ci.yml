@@ -12,5 +12,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: apt update
-      - run: apt install curl -y
+      - run: apt install apt-utils curl -y
       - run: ./debian.sh
