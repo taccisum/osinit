@@ -42,7 +42,7 @@ switch superuser.
 
 ## References
 
-### Tools
+### Installed tools
 
 - Git
 - zsh & oh-my-zsh
