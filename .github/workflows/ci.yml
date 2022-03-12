@@ -6,9 +6,12 @@ on:
       - main
 jobs:
   test:
+    strategy:
+      matrix:
+        os: [ubuntu, centos:7]
     runs-on: ubuntu-latest
     container:
-      image: ubuntu
+      image: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
       - run: apt update
