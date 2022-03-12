@@ -47,9 +47,9 @@ see all [themes](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes).
 ### Installed tools
 
 - Git
-- zsh & oh-my-zsh
-    - autojump
-    - zsh-autosuggestions
+- [zsh](https://www.zsh.org/) & [oh-my-zsh](https://ohmyz.sh/)
+    - [autojump](https://github.com/wting/autojump)
+    - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 - Node.js
 - vim
     - [amix/vimrc](https://github.com/amix/vimrc.git)
