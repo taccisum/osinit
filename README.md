@@ -51,6 +51,7 @@ see all [themes](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes).
     - [autojump](https://github.com/wting/autojump)
     - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 - Node.js
+- [docker](https://www.docker.com)
 - vim
     - [amix/vimrc](https://github.com/amix/vimrc.git)
 - tree
