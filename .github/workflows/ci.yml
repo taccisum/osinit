@@ -7,6 +7,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    container:
+      image: ubuntu
     steps:
       - uses: actions/checkout@v2
       - run: ./debian.sh
