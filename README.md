@@ -40,6 +40,8 @@ switch superuser.
     $ sh common/setuptheme.sh {theme_name}
     $ source ~/.zshrc
 
+see all [themes](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes).
+
 ## References
 
 ### Installed tools
