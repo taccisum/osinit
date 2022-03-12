@@ -8,7 +8,7 @@ jobs:
   test:
     strategy:
       matrix:
-        os: [ubuntu, centos:7]
+        os: [ubuntu, 'centos:7']
     runs-on: ubuntu-latest
     container:
       image: ${{ matrix.os }}
