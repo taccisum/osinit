@@ -1,10 +1,10 @@
 # OS Init
 
-setup your operating system automatically.
+Setup your operating system automatically.
 
 ## How to
 
-### Linux
+### Linux(Depreacted)
 
 #### install zsh and other tools
 
@@ -25,22 +25,26 @@ add you hosts info
     $ ansible-playbook -i batch/linux/hosts.ini batch/linux/init.yaml
 
 
-### Debian
+### Linux
 
-switch superuser.
+Don't switch to superuser do via `sudo` because these are some packages(such as .vimrc, oh-my-zsh) only avaiable for user level.
 
-    $ su
+#### Install zsh and other tools
 
-#### install zsh and other tools
+For Debian.
 
-    $ USE_LOCAL=true ./debian.sh
+    $ ./debian.sh
 
-#### setup zsh theme
+For Ubuntu.
+
+    $ ./ubuntu.sh
+
+#### Setup zsh theme
 
     $ sh common/setuptheme.sh {theme_name}
     $ source ~/.zshrc
 
-see all [themes](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes).
+See all [themes](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes).
 
 ## References
 
