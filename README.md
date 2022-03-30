@@ -27,7 +27,7 @@ add you hosts info
 
 ### Linux
 
-Don't switch to superuser do via `sudo` because these are some packages(such as .vimrc, oh-my-zsh) only avaiable for user level.
+Notes that don't switch to superuser do via `sudo` because these are some packages(such as .vimrc, oh-my-zsh) only avaiable for user level(unless your really intend to install for superuser).
 
 #### Install zsh and other tools
 
