@@ -27,7 +27,7 @@ main(){
     setup_zsh_autosuggestions
     setup_amix_vimrc
 
-    install_docker debian
+    install_docker ubuntu
 }
 
 main $@

@@ -13,9 +13,9 @@ install(){
     else
         which yum;
         if [ $? -eq 0 ]; then
-            yum install $1 -y
+            sudo yum install $1 -y
         else
-            apt-get install $1 -y
+            sudo apt-get install $1 -y
         fi
     fi
 }
