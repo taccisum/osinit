@@ -6,6 +6,5 @@ tools=(
   'vim'
   'tree'
   'jq'
-  'nodejs'
 )
 
